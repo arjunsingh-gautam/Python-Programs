@@ -27,3 +27,7 @@ s1=Student("Arjun",10)
 s1.show_grade()
 Student.get_school_name()
 Student.greet()
+
+print(f"Instance Methods:{s1.__dict__}")
+print(f"Class Data Members:{Student.__dict__}")
+print(f"Type of s1.name:{type(s1.name)}")
