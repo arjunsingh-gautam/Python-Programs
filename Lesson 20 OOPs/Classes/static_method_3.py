@@ -20,7 +20,7 @@ class Disp:
     
     @classmethod
     def call_static(cls,obj,objinfo):
-        cls.display(obj,objinfo) # calling static method wrt. self
+        cls.display(obj,objinfo) # calling static method wrt. class method
 
 s= Student()
 e=Employee()
