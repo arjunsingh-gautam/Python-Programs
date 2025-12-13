@@ -780,3 +780,62 @@ Hash numbers are primarily used in data structures such as **hash tables**, whic
 ### **Conclusion**
 
 Hashing is critical for efficient data storage and retrieval in Python. Hashable objects (immutable and deterministic) can be used as keys or set elements, while unhashable objects cannot due to mutability or the lack of a `__hash__` method. Python's hash-based collections rely heavily on the principles of hashing to achieve high performance.
+
+## <span style="color:#33ff00">**Shallow vs DeepCopy**</span>
+
+## 🔹 Shallow Copy
+
+- **Definition:** Creates a new object, but only copies references to the nested objects inside it (not the actual objects).
+- **Effect:** Changes made to **nested (mutable) objects** in the copy will also reflect in the original.
+- **Independent?:** Top-level object is independent, but nested objects are **shared**.
+- **Example in Python:**
+
+  ```python
+  import copy
+
+  original = [[1, 2], [3, 4]]
+  shallow = copy.copy(original)
+
+  shallow[0][0] = 99   # change nested element
+  print(original)  # [[99, 2], [3, 4]] → original also affected
+  ```
+
+---
+
+## 🔹 Deep Copy
+
+- **Definition:** Creates a new object **and recursively copies all nested objects**.
+- **Effect:** Changes in the copy do not affect the original (completely independent).
+- **Independent?:** Both top-level and nested objects are **independent**.
+- **Example in Python:**
+
+  ```python
+  import copy
+
+  original = [[1, 2], [3, 4]]
+  deep = copy.deepcopy(original)
+
+  deep[0][0] = 99
+  print(original)  # [[1, 2], [3, 4]] → original NOT affected
+  ```
+
+---
+
+## 🔑 Key Differences
+
+| Aspect         | Shallow Copy       | Deep Copy                         |
+| -------------- | ------------------ | --------------------------------- |
+| Copies object? | ✅ Top-level only  | ✅ Top-level + all nested objects |
+| Nested objects | Shared (reference) | Independent (new copies)          |
+| Memory use     | Less               | More                              |
+| Performance    | Faster             | Slower                            |
+| Independence   | Partial            | Complete                          |
+
+---
+
+👉 Think of it like **photocopy vs redrawing**:
+
+- **Shallow copy** = photocopy → looks the same but still points to the same inner objects.
+- **Deep copy** = redraw → a completely new version, independent of the original.
+
+---
