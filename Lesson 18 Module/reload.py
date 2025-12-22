@@ -3,6 +3,7 @@ import importlib # imp is deprecated in version 3.4 use importlib
 import time 
 import module3
 module3.add(10,20)
+module3.product(30,40)
 print("Program entering into sleeping state")
 time.sleep(45) # I will update module3 with product() function this program execution has been stopped
 print("Just wake up and calling updated function")
@@ -11,4 +12,8 @@ print("Just wake up and calling updated function")
 
 # To solve the reload issue we can import reload() function from imp module
 importlib.reload(module3)
-module3.product(10,20)
+
+
+# Reload only important when we make change to the script of another module which is being imported during run-time of current module which is importing the module
+
+# If we make changes to imported module and re-run the script which is importing the module it will reflect changes without reloading since it is being re-run it will once again import the module since the module object destroyed when script get terminated previously
