@@ -66,7 +66,7 @@ It’s important because modern software is too complex to manage with just raw 
 
 ## <span style="color:#ffc300">**What makes a Language Object Oriented**</span>
 
-### <span style="color:#ef233c"> 🔑 1. **Classes and O</span>bjects**
+### <span style="color:#ef233c"> 🔑 1. **Classes and Objects**</span>
 
 - A **class** defines a blueprint (like a template).
 - An **object** is an actual instance of that class.

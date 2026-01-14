@@ -20,7 +20,7 @@ class Dog:
 
 ---
 
-### <span style="color:#ef233c"> **2) Memory: when is space allocated?**</span>
+### <span style="color:#ef233c"> **2) Memory: when space is allocated?**</span>
 
 - **Class definition time:** Python creates the class object. The _function objects_ for methods live on the class (in `Dog.__dict__`). No per-instance storage yet.
 - **Object creation time (`Dog("Fido")`)**: Python allocates an _instance object_, normally with an `__dict__`, and fills instance attributes (like `name`). That's where per-object data is stored.
