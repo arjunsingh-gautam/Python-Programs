@@ -1,4 +1,4 @@
-# <span style="color:orange">Introduction to Pyton </span>
+# **<span style="color:orange">Introduction to Python </span>**
 
 ## <span style="color:pink">History of Python </span>
 
@@ -85,26 +85,21 @@ The Python Virtual Machine (PVM) executes the bytecode. The PVM is a stack-based
 ## <span style="color:pink">Detailed Process Flow
 
 1. **Source Code (`.py` file)**
-
    - Written by the programmer.
 
 2. **Lexical Analysis**
-
    - Tokenizer splits the code into tokens.
    - Example: `print("Hello, World!")` -> `['print', '(', '"Hello, World!"', ')']`
 
 3. **Parsing**
-
    - Tokens are parsed into an Abstract Syntax Tree (AST).
    - Example: `print("Hello, World!")` -> AST node representing a function call.
 
 4. **Semantic Analysis**
-
    - Checks for meaningful and valid constructs.
    - Example: Ensures `print` is a valid function call.
 
 5. **Bytecode Compilation**
-
    - AST is converted to bytecode.
    - Example: Bytecode instruction for `print("Hello, World!")`.
 
@@ -179,12 +174,10 @@ When a Python source code file is executed, the process can be broken down into 
 #### Key Mechanisms:
 
 1. **Global Interpreter Lock (GIL)**:
-
    - In CPython (the standard Python implementation), the GIL ensures that only one thread executes Python bytecode at a time.
    - This simplifies memory management but can limit performance in multi-threaded programs.
 
 2. **Garbage Collection**:
-
    - Python uses automatic memory management with garbage collection.
    - Unreferenced objects are cleaned up to free memory.
    - Uses reference counting and cycle-detection algorithms.
@@ -332,7 +325,6 @@ If you're doing CPU-heavy tasks, use the `multiprocessing` module — it **creat
 - It’s like a **single-lane bridge** for threads.
 - It affects **CPU-bound multithreaded performance**, not I/O-bound.
 - Developers should use:
-
   - `multiprocessing` for CPU-bound
   - `threading` or `asyncio` for I/O-bound
 
