@@ -217,12 +217,10 @@ When a function is called, the PVM executes it in the following steps:
 #### **Step-by-Step Execution of a Function Call**
 
 1. **Evaluate the Arguments**:
-
    - The PVM evaluates the arguments passed to the function.
    - Arguments are assigned to the corresponding parameters defined in the function.
 
 2. **Create a New Call Stack Frame**:
-
    - A **call stack frame** is created for the function.
    - This stack frame is a memory structure used to store:
      - **Local variables** of the function.
@@ -231,7 +229,6 @@ When a function is called, the PVM executes it in the following steps:
      - The **return address**, which tells the PVM where to return after the function call.
 
 3. **Execute the Function's Bytecode**:
-
    - The PVM begins executing the function's bytecode from the first line of the function body.
    - During execution, the stack frame is used to store and manage all variables.
 
@@ -278,14 +275,12 @@ print(f"Sum: {sum_result}, Product: {product_result}")
 #### **Step-by-Step Execution**
 
 1. **Function Compilation**:
-
    - When `add` and `multiply` are defined:
      - The PVM compiles their bodies into bytecode.
      - Function objects for `add` and `multiply` are created in memory.
      - These objects are stored in the global namespace.
 
 2. **Calling `add(10, 20)`**:
-
    - Arguments `10` and `20` are evaluated.
    - A new stack frame is created for `add`:
      - Parameters `a` and `b` are assigned `10` and `20`.
@@ -296,7 +291,6 @@ print(f"Sum: {sum_result}, Product: {product_result}")
    - The stack frame for `add` is discarded.
 
 3. **Calling `multiply(5, 6)`**:
-
    - Arguments `5` and `6` are evaluated.
    - A new stack frame is created for `multiply`:
      - Parameters `x` and `y` are assigned `5` and `6`.
@@ -471,7 +465,7 @@ introduce(age=25, name="Bob")  # Output: My name is Bob, and I am 25 years old.
 1. Avoid duplicating parameters by mixing positional and keyword arguments for the same parameter.
    ```python
    # Incorrect (TypeError)
-   introduce("Bob", age=25)  # Name is passed both as positional and keyword
+   introduce("Bob", name='Alice')  # Name is passed both as positional and keyword
    ```
 2. Always use valid parameter names for keyword arguments.
 
@@ -507,7 +501,6 @@ print(calculate_salary(base_salary=6000, bonus=2000, tax_rate=0.15))
 ### <span style="color:pink">**4. Constraints and Precautions**</span>
 
 1. **Avoid Mixing Confusion**:
-
    - Positional arguments must always precede keyword arguments.
    - Example:
 
@@ -595,7 +588,6 @@ A **variadic function** is a function that can accept a variable number of argum
   ```
 
 - **Working**:
-
   - The `*` operator before the parameter name (`args`) indicates a collection of arguments.
   - The arguments are stored in a tuple and can be accessed using indexing, iteration, etc.
 
@@ -623,7 +615,6 @@ A **variadic function** is a function that can accept a variable number of argum
   ```
 
 - **Working**:
-
   - The `**` operator before the parameter name (`kwargs`) collects keyword arguments as key-value pairs in a dictionary.
 
 - **Example**:
@@ -653,7 +644,6 @@ A **variadic function** is a function that can accept a variable number of argum
   ```
 
 - **Working**:
-
   - Positional arguments are collected in `args` (tuple).
   - Keyword arguments are collected in `kwargs` (dictionary).
 
@@ -683,7 +673,6 @@ A **variadic function** is a function that can accept a variable number of argum
   ```
 
 - **Working**:
-
   - Regular parameters are assigned values first.
   - Extra positional arguments go into `args`.
   - Extra keyword arguments go into `kwargs`.
@@ -708,12 +697,10 @@ A **variadic function** is a function that can accept a variable number of argum
 ### <span style="color:pink">**How Variadic Functions Work**</span>
 
 1. **During Function Definition**:
-
    - `*args` collects any additional positional arguments as a tuple.
    - `**kwargs` collects any additional keyword arguments as a dictionary.
 
 2. **During Function Call**:
-
    - Extra arguments provided are automatically packed into `args` or `kwargs`.
 
 3. **Unpacking**:
@@ -744,7 +731,6 @@ introduce(*data, **info)
 ### <span style="color:pink">**Precautions When Using Variadic Functions**</span>
 
 1. **Order of Parameters**:
-
    - Regular parameters must come first, followed by `*args`, and then `**kwargs`.
    - Example:
      ```python
@@ -753,7 +739,6 @@ introduce(*data, **info)
      ```
 
 2. **Avoid Ambiguity**:
-
    - Do not mix positional arguments and keyword arguments in a confusing way.
 
      ```python
@@ -768,7 +753,6 @@ introduce(*data, **info)
      ```
 
 3. **Default Values with Variadic Functions**:
-
    - Variadic parameters cannot have default values.
 
 4. **Performance**:

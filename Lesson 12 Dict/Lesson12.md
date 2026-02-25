@@ -8,7 +8,7 @@ A dictionary in Python is an **unordered, mutable**, and **key-value** pair data
 
 1. **Unordered**: In Python versions < 3.7, dictionaries are unordered. From Python 3.7 onwards, dictionaries maintain the insertion order.
 2. **Mutable**: The contents of a dictionary can be changed after it is created (keys and values can be added, removed, or modified).
-3. **Unique Keys**: Each key in a dictionary must be unique. If a key is duplicated, the last value will overwrite the earlier one.
+3. **Unique Keys**: Each key in a dictionary must be unique. <u>_If a key is duplicated, the last value will overwrite the earlier one._</u>
 4. **Hashable Keys**: Keys must be immutable types (e.g., strings, numbers, or tuples with immutable elements). Values can be of any data type.
 
 ---
