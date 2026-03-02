@@ -101,6 +101,7 @@ If you want separate lists, initialize them in `__init__` as `self.data = []`.
 
 - By default, instances have a `__dict__` and can have arbitrary attributes (flexible but more memory per instance).
 - `__slots__` lets you declare a fixed set of attributes and prevent `__dict__` creation, saving memory for many instances:
+- When we declare `__slots__` we cannot assign and create new instance attributes since there is no `__dict__` for _setting new attributes_
 
 ```python
 class Lite:

@@ -78,17 +78,29 @@ Student.change_school("North High")
 print(Student.school_name)   # North High
 ```
 
+#### 3. Outside Class
+
+```python
+class Student:
+    school_name = "Central High"   # class data member
+
+s1=Student() # instance object
+s1.__class__.branch_name='RK Puram' # Using instance object
+Student.school_city='Delhi' # using Class
+print(Student.school_name)   # access via class name
+print(Student.school_city)
+print(Student.branch_name)
+```
+
 ---
 
 ## 🔑 Accessing Data Members
 
 - Instance Data Members:
-
   - `objectname.member`
   - `self.member` (inside methods)
 
 - Class Data Members:
-
   - `ClassName.member`
   - `objectname.member`
   - `cls.member` (inside class method)
@@ -101,7 +113,6 @@ print(Student.school_name)   # North High
 ### For Instance Data Members
 
 1. Define them **in constructor** (`__init__`) for consistency.
-
    - If you define them only in some methods, some objects may miss them.
    - Example:
 
@@ -144,7 +155,6 @@ print(Student.school_name)   # North High
 - **Instance Data Members** = unique per object → defined in constructor, instance method, or via object.
 - **Class Data Members** = shared by all objects → defined in class body or class method.
 - **Precautions:**
-
   - Stick to constructor for instance members (consistency).
   - Modify class members with `cls` or class name, not via objects.
 
