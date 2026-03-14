@@ -10,7 +10,7 @@ def decorator_function(original_function):
         print(f"wrapper_function executed before {original_function.__name__}")
         return original_function()
 
-    return wrapper_function
+    return wrapper_function # Return a modified/decorated original function
     
 
 # Original Function:
@@ -20,3 +20,4 @@ def display():
 decorated_display=decorator_function(display)
 
 decorated_display()
+

@@ -7,6 +7,9 @@ try:
     if age<18:
         raise AgeError("Age is less than 18")
 except AgeError as e:
+    print(type(e))
+    print((e.__dict__))
+    print(e.__str__)
     print(f"age:{age}- {e}")
 
 else:
