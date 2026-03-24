@@ -1,0 +1,2 @@
+Hi, Universe!
+Welcome to file handling in Python.

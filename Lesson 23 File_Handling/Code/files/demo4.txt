@@ -1,0 +1,5 @@
+Line 1: Hello, World!
+Line 2: Welcome to file handling in Python.
+Line 3: This is a demo file.
+Line 4: We are writing multiple lines.
+Line 5: Goodbye!
