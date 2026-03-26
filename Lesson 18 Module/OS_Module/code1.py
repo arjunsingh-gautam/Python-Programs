@@ -11,4 +11,5 @@ os.chdir('d:/Desktop/C++_Programs')
 print(os.getcwd())
 
 # Listing files in current directory
-print(os.listdir())
+print(os.listdir()) # Return a list
+

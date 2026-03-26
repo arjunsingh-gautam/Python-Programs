@@ -24,4 +24,4 @@ with open(os.path.abspath('person.json'),'w') as f:  # 'w' for writing, automati
     json.dump(person,f,default=person_to_dict)  # serialize person object to JSON and write to file 
 
 with open(os.path.abspath('animal.json'),'w') as f:  # 'w' for writing, automatically closes file
-    json.dump(dog,f,default=person_to_dict)  # serialize dog object to JSON using __dict__ and write to file
+    json.dump(dog,f,default=person_to_dict)  # object is not JSON serializable, will raise TypeError and be caught by default handler, which will write null to file

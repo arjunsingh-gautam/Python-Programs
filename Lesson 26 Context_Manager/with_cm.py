@@ -20,3 +20,5 @@ with change_dir(os.path.abspath('sample-dir-one')):  # automatically changes to 
 
 with change_dir(os.path.abspath('sample-dir-two')):  # automatically changes to sample-dir-two
     print(os.listdir())  # list files in sample-dir-two
+
+# Here we have used a custom context manager to change directories. The __enter__ method changes to the new directory and the __exit__ method changes back to the original directory. This ensures that we always return to the original directory after the with block, even if an error occurs.
