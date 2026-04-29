@@ -9,7 +9,7 @@ args=parser.parse_args()
 path=args.path
 
 
-option=input("Enter 'ls' for listing files in director\nEnter 'sr' for searching files")
+option=input("Enter 'ls' for listing files in director\nEnter 'sr' for searching files\n")
 
 match (option):
     case 'ls':

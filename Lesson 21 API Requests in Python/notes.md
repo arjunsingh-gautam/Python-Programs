@@ -1,0 +1,6 @@
+- status response and how to handle and know them using response object attributes
+- various http methods and their use
+- what is a payload/url attribute and their use
+- respone header
+- url and endpoints
+    - domain,path/endpoint,query parameter
