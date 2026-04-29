@@ -10,3 +10,5 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
     futures=[executor.submit(do_something,i) for i in range(10)]
     for future in futures:
         print(future.result())
+        
+        
