@@ -1,0 +1,24 @@
+# Writing 2 co-routines and running them using only awain in main co-routine
+import asyncio
+import time
+async def coroutine1():
+    print("Coroutine 1 started")
+    await asyncio.sleep(1)
+    print("Coroutine 1 completed")
+async def coroutine2():
+    print("Coroutine 2 started")
+    await asyncio.sleep(2)
+    print("Coroutine 2 completed")
+    
+async def main():
+    print("Main function started")
+    await coroutine1()
+    await coroutine2()
+    print("Main function completed")
+    
+if __name__ == "__main__":
+    start_time=time.perf_counter()
+    asyncio.run(main())
+    finish_time=time.perf_counter()
+    print(f"Finished in {round(finish_time-start_time,2)} second(s)")
+    
