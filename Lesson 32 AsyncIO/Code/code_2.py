@@ -22,3 +22,15 @@ if __name__ == "__main__":
     finish_time=time.perf_counter()
     print(f"Finished in {round(finish_time-start_time,2)} second(s)")
     
+# Output:
+# Main function started
+# Coroutine 1 started   
+# Coroutine 1 completed
+# Coroutine 2 started
+# Coroutine 2 completed
+# Main function completed
+# Finished in 3.01 second(s)
+
+
+# No concurrency benefit as we are scheduling the co-routine and running the co-routinne and there is no other scheduled co-routine to run while the first co-routine is sleeping. 
+# Because it act same as if we are running the co-routines sequentially. So we need to schedule the co-routines and then run them using await. We will see that in the next code snippet.
