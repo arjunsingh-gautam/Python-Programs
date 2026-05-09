@@ -1,6 +1,10 @@
-from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
+from fastapi import FastAPI,Request
+from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
+
 app = FastAPI()
+app.mount("/static", StaticFiles(directory="static"), name="static")
+templates = Jinja2Templates(directory="templates")
 
 posts: list[dict] = [
     {
@@ -19,10 +23,14 @@ posts: list[dict] = [
     },
 ]
 
-@app.get("/",response_class=HTMLResponse,include_in_schema=False)
-def home():
-    return f"<h1>Welcome to the FastAPI Blog!</h1><p>Use the /api/posts endpoint to see all posts.</p>"
+@app.get("/", include_in_schema=False, name="home")  # include_in_schema=False hides the endpoint from the automatic API documentation
+def home(request:Request):
+    return templates.TemplateResponse(
+        request,
+        "home.html",
+        {"posts":posts,"title":"Home Page"},
+        )
 
-@app.get("/api/posts",response_class=HTMLResponse,include_in_schema=False)
+@app.get("/api/posts")
 def get_posts():
-    return f"<h1>Blog Posts</h1>" + "".join(f"<h2>{post['title']}</h2><p>By {post['author']} on {post['date_posted']}</p><p>{post['content']}</p>" for post in posts)
+    return posts
