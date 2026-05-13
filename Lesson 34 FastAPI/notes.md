@@ -7,3 +7,7 @@
 # loops in context
 
 # Template inheritance
+
+- what are path parameters
+- how they work
+- http exception and status
