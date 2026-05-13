@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Home — Student Directory{% endblock %}
+
+{% block header_action %}
+  <a href="/api/students" class="btn btn-outline-primary">View JSON</a>
+{% endblock %}
+
+{% block content %}
+  <div class="row gy-4">
+    {% if students %}
+      {% for student in students %}
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card student-card h-100">
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <h5 class="card-title mb-0">{{ student.name }}</h5>
+                <span class="badge bg-primary">{{ student.branch }}</span>
+              </div>
+
+              <p class="card-text text-muted mb-2">Subjects:</p>
+              <div class="mb-3">
+                {% if student.subjects %}
+                  {% for subj in student.subjects %}
+                    <span class="badge bg-secondary me-1 mb-1">{{ subj }}</span>
+                  {% endfor %}
+                {% else %}
+                  <small class="text-muted">No subjects listed</small>
+                {% endif %}
+              </div>
+
+              <div class="mt-auto">
+                <a class="btn btn-sm btn-outline-primary" href="mailto:">Contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="col-12">
+        <div class="alert alert-info mb-0">No students available.</div>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}
