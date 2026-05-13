@@ -1,11 +1,11 @@
-from fastapi import FastAPI, Request
-from fastapi.templating import Jinja2Templates
+from fastapi import FastAPI,Request
 from typing import List
+from fastapi.templating import Jinja2Templates
 
 app=FastAPI()
 templates=Jinja2Templates(directory="templates")
 
-students: List[dict] = [
+students:List[dict]=[
     {
         "name":"John Doe",
         "branch":"CSE",
@@ -24,10 +24,9 @@ students: List[dict] = [
     
 ]
 
-@app.get("/", name="home", include_in_schema=False)
-def home(request: Request):
-    # TemplateResponse expects the template name first and a context dict
-    return templates.TemplateResponse("home.html", {"request": request, "students": students})
+@app.get("/",name="home",include_in_schema=False)
+def home(request:Request):
+    return templates.TemplateResponse(request,"home.html",{"students":students})
 
 @app.get("/api/students")
 def get_details():
