@@ -14,8 +14,8 @@ async def coroutine2():
 async def main():
     task1=asyncio.create_task(coroutine1())
     task2=asyncio.create_task(coroutine2())
-    await task1
-    await task2
+    """ await task1
+    await task2 """
     print("Main function started")
     
 if __name__ == "__main__":
