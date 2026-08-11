@@ -2,7 +2,7 @@
 import mysql.connector
 try:
     connection = mysql.connector.connect(
-        host='localhost',user='root',password='arjun1052003',database='my_database')
+        host='localhost',user='root',password='****',database='my_database')
     if connection.is_connected():   
         print("Connected to MySQL database")
         cursor = connection.cursor()

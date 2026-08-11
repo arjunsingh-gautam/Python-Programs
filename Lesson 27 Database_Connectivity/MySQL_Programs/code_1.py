@@ -4,7 +4,7 @@ import os
 # Establishing a connection to the database 
 try:
     connection = mysql.connector.connect(
-        host='localhost',user='root',password='arjun1052003')
+        host='localhost',user='root',password='******')
     if connection.is_connected():
         print("Connected to MySQL database")
 except mysql.connector.Error as err:
